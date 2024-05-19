@@ -1,0 +1,22 @@
+{
+  "name": "freetube-ext",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/zip.js",
+    "check": "tsc --tsconfig ./tsconfig.json --noEmit",
+    "lint:ext": "addons-linter extension.zip"
+  },
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.10.0",
+    "addons-linter": "^6.27.0",
+    "tslib": "^2.5.0",
+    "typescript": "^5.3.2",
+    "vite": "^4.0.0",
+    "vite-plugin-web-extension": "^4.0.0",
+    "webextension-polyfill": "^0.10.0",
+    "zip-a-folder": "^3.1.6"
+  }
+}
