@@ -34,11 +34,12 @@ function newClickHandler(e: MouseEvent) {
 function wrapHomepage() {
   const components = document.querySelectorAll("ytd-rich-grid-media")
   components.forEach((c) => {
-    if (c.getAttribute("freetube-hooked") === "true") {
+    if (c.getAttribute("data-freetube-hooked") === "true") {
       return
     }
-    recreateNode(c as HTMLElement).addEventListener("click", newClickHandler)
-    c.setAttribute("freetube-hooked", "true")
+    const recreated = recreateNode(c as HTMLElement)
+    recreated.addEventListener("click", newClickHandler)
+    recreated.setAttribute("data-freetube-hooked", "true")
   })
 }
 
